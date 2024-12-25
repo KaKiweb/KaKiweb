@@ -6,11 +6,11 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-   background-image: url('images/Fondo.jpg');
-   background-size: cover; 
-    background-attachment: fixed; /* Esta propiedad hace que el fondo quede estático */
-    
-    
+    background-image: url('images/Fondo.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #e5e5e5;
 }
 
 .container {
@@ -243,25 +243,6 @@ footer .social-links .instagram {
 footer .social-links .whatsapp {
     background: #25D366;
 }
-/* General Styles */
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&family=Anton&display=swap');
-
-body {
-    font-family: 'Anton', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-image: url('images/Fondo.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    color: #e5e5e5;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
 
 /* Register Section */
 .register {
@@ -346,3 +327,114 @@ body {
     text-decoration: underline;
 }
 
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    header .logo,
+    header nav ul {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .pricing-plan h3 {
+        font-size: 1.5rem;
+    }
+
+    .pricing-plan p {
+        font-size: 1.2rem;
+    }
+
+    .testimonial p {
+        font-size: 1rem;
+    }
+
+    .register h2 {
+        font-size: 2rem;
+    }
+
+    .register p {
+        font-size: 1.2rem;
+    }
+
+    .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        background-position: center center;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .pricing-plan h3 {
+        font-size: 1.2rem;
+    }
+
+    .pricing-plan p {
+        font-size: 1rem;
+    }
+
+    .testimonial p {
+        font-size: 0.9rem;
+    }
+
+    .register h2 {
+        font-size: 1.5rem;
+    }
+
+    .register p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}

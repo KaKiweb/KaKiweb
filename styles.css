@@ -6,9 +6,10 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-image: url('images/Fondo.jpg');
+   background-image: url('images/Fondo.jpg') ; 
     background-attachment: fixed; /* Esta propiedad hace que el fondo quede estático */
-    color: #e5e5e5;
+    
+    
 }
 
 .container {

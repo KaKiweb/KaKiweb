@@ -1,0 +1,267 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: url('/KaKiWebGallery/imagesMeño/Fondo1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 10;
+  }
+  
+  .header .logo img {
+    max-width: 20%;
+    height: auto;
+    border-radius: 50%;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #fff;
+  }
+  
+  /* Navegación */
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #ffd700; /* Color dorado */
+  }
+  
+  /* Sección Acerca de */
+  .acerca-de {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .acerca-de h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .acerca-de p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+  
+  /* Sección Servicios */
+  .servicios {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+  }
+  
+  .servicios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .servicios ul {
+    list-style: none;
+  }
+  
+  .servicios .animacion-item {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .servicios .animacion-item:hover {
+    transform: scale(1.1);
+    color: #ffd700; /* Color dorado */
+  }
+  
+  /* Sección Galería */
+  .galeria {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+  }
+  
+  .galeria h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .galeria-item {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .galeria-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Sección Testimonios */
+  .testimonios {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+  }
+  
+  .testimonios blockquote {
+    font-size: 1.2rem;
+    margin: 20px auto;
+    max-width: 800px;
+    font-weight: 300;
+  }
+  
+  .testimonios blockquote footer {
+    margin-top: 10px;
+    font-style: italic;
+  }
+  
+  /* Sección Contacto */
+  .contacto {
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+  }
+  
+  .contacto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Footer */
+  .footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animaciones de los elementos */
+  .animacion-item {
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  /* Media Queries para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 2rem;
+    }
+  
+    .header p {
+      font-size: 1rem;
+    }
+  
+    .servicios h2 {
+      font-size: 2rem;
+    }
+  
+    .galeria h2 {
+      font-size: 2rem;
+    }
+  
+    .testimonios blockquote {
+      font-size: 1rem;
+    }
+  
+    .contacto h2 {
+      font-size: 2rem;
+    }
+  
+    .social-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  

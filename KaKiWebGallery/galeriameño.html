@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meño's Tattoo's - Galería</title>
+  <link rel="stylesheet" href="stylesGaleriaMeño.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+         <div class="fotoPerfil-container">
+        <img src="/KaKiWebGallery/meñotrabajando.jpg" alt="Meño Trabajando" class="fotoPerfil">
+      </div>
+      <h1>Bienvenidos a la Galería de <span>Meño's Tattoo's</span></h1>
+     
+      <p>Explora el arte en tu piel</p>
+      <a href="#galeria" class="btn">Ver la Galería</a>
+    </div>
+  </header>
+
+  <section id="galeria" class="galeria-container">
+    <h2>Galería de Tatuajes</h2>
+    <div class="galeria">
+      <div class="tattoo-item">
+        <img src="imagesMeño/MenoTatooPierna.jpg" alt="Tatuaje 1">
+      </div>
+      <div class="tattoo-item">
+        <img src="imagesMeño/meñotatoobrazo.jpg" alt="Tatuaje 2">
+      </div>
+      <div class="tattoo-item">
+        <img src="imagesMeño/meñotatooprro.jpg" alt="Tatuaje 3">
+      </div>
+      <div class="tattoo-item">
+        <img src="imagesMeño/TatooNalguita.jpg" alt="Tatuaje 4">
+      </div>
+      <!-- Añade más imágenes de tatuajes aquí -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Meño's Tattoo's | Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.tattoo-item');
+  let delay = 0;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = `${delay}s`;
+        delay += 1; // Incrementa el delay para cada imagen en 2 segundos (puedes ajustar este valor)
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // Deja de observar el elemento una vez que ha sido animado
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  items.forEach(item => {
+    observer.observe(item);
+  });
+});
+  </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Espera a que todo el contenido de la página haya sido cargado
+      setTimeout(function() {
+        // Añade la clase 'visible' a la sección .hero después de un pequeño retraso
+        document.querySelector('.hero').classList.add('visible');
+      }, 300); // Puedes ajustar el tiempo de retraso si es necesario
+    });
+  </script>
+  

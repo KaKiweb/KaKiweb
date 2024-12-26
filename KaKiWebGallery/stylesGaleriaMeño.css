@@ -1,0 +1,188 @@
+/* stylesGaleriaMeño.css */
+
+/* General styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-image: url('imagesMeño/Fondo1.jpg'); /* Ruta a tu imagen de fondo */
+  background-size: cover; /* Escalar la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* No repetir la imagen */
+  background-attachment: fixed; /* La imagen se fija en su posición al hacer scroll */
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Hero section */
+.hero {
+  background-color: rgba(34, 34, 34, 0.8); /* Fondo oscuro con opacidad */
+  height: 60vh; /* Altura relativa al viewport */
+  width: 70vw; /* Ancho completo */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-bottom-left-radius: 50% 100vh; /* Curvatura uniforme */
+  border-bottom-right-radius: 50% 100vh; /* Curvatura uniforme */
+  overflow: hidden;
+  padding: 10%;
+  margin-bottom: 50px;
+  transform: translateY(-100%); /* Inicialmente oculto */
+  transition: transform 3s ease; /* Transición de 2 segundos */
+}
+
+.hero.visible {
+  transform: translateY(0); /* Posición normal */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero span {
+  color: #FF6347; /* Color para la parte del nombre "Meño's Tattoo's" */
+}
+
+/* Imagen de perfil */
+.fotoPerfil-container {
+  display: inline-block;
+  border: 2px solid red; /* Marco rojo */
+  border-radius: 50%; /* Borde redondeado para el contenedor */
+  overflow: hidden; /* Recorta la imagen para que se ajuste al contenedor */
+  width: 300px; /* Ajusta el tamaño del contenedor */
+  height: 300px; /* Ajusta el tamaño del contenedor */
+  margin: 10px 0; /* Espacio superior e inferior */
+}
+
+.fotoPerfil {
+  width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+  height: 100%; /* Imagen ocupa todo el alto del contenedor */
+  object-fit: cover; /* La imagen se ajusta al contenedor */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh; /* Ajusta la altura para pantallas más pequeñas */
+    width: 90vw; /* Ajusta el ancho para pantallas más pequeñas */
+    border-bottom-left-radius: 50% 50vh; /* Ajusta la curvatura para pantallas más pequeñas */
+    border-bottom-right-radius: 50% 50vh; /* Ajusta la curvatura para pantallas más pequeñas */
+    padding: 5%; /* Reduce el padding para pantallas más pequeñas */
+  }
+
+  .hero h1 {
+    font-size: 1.5rem; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+  }
+
+  .fotoPerfil-container {
+    width: 150px; /* Ajusta el tamaño del contenedor para pantallas más pequeñas */
+    height: 150px; /* Ajusta el tamaño del contenedor para pantallas más pequeñas */
+  }
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.hero .btn {
+  padding: 10px 30px;
+  background-color: #FF6347;
+  border-radius: 30px;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.hero .btn:hover {
+  background-color: #e5532c;
+  transform: translateY(-5px);
+}
+
+/* Galería section */
+.galeria-container {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: rgba(26, 26, 26, 0.7); /* Fondo semitransparente */
+  margin-bottom: 10%;
+}
+
+.galeria-container h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.galeria-container h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  background-color: #FF6347;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.tattoo-item {
+  width: 220px; /* Ancho del contenedor individual */
+  height: 220px; /* Altura del contenedor individual */
+  padding: 10px; /* Espacio interno para el contenedor */
+  background-color: rgba(240, 0, 0, 0.2); /* Fondo semitransparente para cada contenedor de imagen */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(89, 0, 255, 0.3);
+  transition: transform 1.0s ease-in-out, opacity 0.6s ease-out; /* Transición de 3 segundos para la transformación y 0.6 segundos para la opacidad */
+  opacity: 0; /* Inicialmente oculto */
+  transform: translateY(250px); /* Posición inicial fuera de vista */
+}
+
+.tattoo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 300px; /* Añade un pequeño radio a la imagen para que coincida con el contenedor */
+  transition: transform 0.3s ease-in-out; /* Añadir transición para la imagen */
+}
+
+.tattoo-item:hover {
+  transform: scale(1.05); /* Agrandar el contenedor al pasar el mouse */
+}
+
+.tattoo-item:hover img {
+  transform: scale(1.1); /* Agrandar la imagen al pasar el mouse */
+}
+
+/* Clase para animar la entrada */
+.tattoo-item.show {
+  opacity: 1; /* Hacer visible */
+  transform: translateY(0); /* Mover a su posición original */
+  transition: opacity 0.6s ease-out, transform 1.5s ease-out; /* Animar la transición */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(34, 34, 34, 0.8); /* Fondo oscuro con opacidad */
+  color: #fff;
+  font-size: 0.875rem;
+}
